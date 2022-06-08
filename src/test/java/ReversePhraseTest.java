@@ -5,14 +5,10 @@ import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-public class ReverseWordsTest {
+public class ReversePhraseTest {
     @Before
     public void before() {
-        final ReverseLetters reversePhrase = mock(ReverseLetters.class);
-        when(reversePhrase.apply("Zamieniona")).thenReturn("anoineimaZ");
-        when(reversePhrase.apply("kolejność")).thenReturn("ćśonjelok");
-        when(reversePhrase.apply("liter")).thenReturn("retil");
-        when(reversePhrase.apply("")).thenReturn("");
+        ReverseLetters reversePhrase = new ReversePhrase();
         reverseWords = ReverseWords.with(reversePhrase);
     }
 
@@ -33,7 +29,7 @@ public class ReverseWordsTest {
 
     @Test
     public void apply_plainText() {
-        assertEquals("anoineimaZ ćśonjelok retil",
+        assertEquals("anoineimaZ ćśonjelok 6retil",
                 reverseWords.apply("Zamieniona kolejność liter6"));
     }
 

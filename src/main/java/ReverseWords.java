@@ -4,6 +4,7 @@ import com.google.common.base.Splitter;
 import com.google.common.collect.Iterables;
 
 public class ReverseWords implements ReverseLetters {
+
     public static ReverseWords with(final ReverseLetters reversePhrase) {
         return new ReverseWords(reversePhrase);
     }
